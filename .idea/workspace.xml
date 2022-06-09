@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="61747c55-169e-471c-9d22-63d87e5bd6d6" name="Changes" comment="" />
-=======
-    <list default="true" id="09384b7a-f8d9-4102-8ea2-2ab0e8b8ecab" name="Changes" comment="" />
->>>>>>> ff85f2363af7f98b597682794c5728c1da7de54b
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,11 +27,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
-<<<<<<< HEAD
   <component name="ProjectId" id="2ALEP3JXGHRMF5fmrVstFm3YThH" />
-=======
-  <component name="ProjectId" id="2ALEQ8GGji8x1nF67xwkTTA4EEb" />
->>>>>>> ff85f2363af7f98b597682794c5728c1da7de54b
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -43,15 +35,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
-=======
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cesar-andino-student-code/module-1/18_Review/lecture-solution" />
-  </component>
-  <component name="RunManager" selected="Application.VendingMachineCLI">
->>>>>>> ff85f2363af7f98b597682794c5728c1da7de54b
     <configuration name="VendingMachineCLI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.techelevator.VendingMachineCLI" />
       <module name="m1-java-capstone-vending-machine" />
@@ -65,43 +51,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
     <recent_temporary>
       <list>
         <item itemvalue="Application.VendingMachineCLI" />
-=======
-    <configuration name="All in m1-java-capstone-vending-machine" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="m1-java-capstone-vending-machine" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.VendingMachineCLI" />
-        <item itemvalue="JUnit.All in m1-java-capstone-vending-machine" />
->>>>>>> ff85f2363af7f98b597682794c5728c1da7de54b
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-<<<<<<< HEAD
       <changelist id="61747c55-169e-471c-9d22-63d87e5bd6d6" name="Changes" comment="" />
       <created>1654780438024</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654780438024</updated>
-=======
-      <changelist id="09384b7a-f8d9-4102-8ea2-2ab0e8b8ecab" name="Changes" comment="" />
-      <created>1654780446708</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1654780446708</updated>
->>>>>>> ff85f2363af7f98b597682794c5728c1da7de54b
     </task>
     <servers />
   </component>

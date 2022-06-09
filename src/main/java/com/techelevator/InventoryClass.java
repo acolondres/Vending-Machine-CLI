@@ -2,33 +2,61 @@ package com.techelevator;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class InventoryClass {
 
+    File inputFile = new File("vendingmachine.csv");
+    List<String> itemSlot = new ArrayList<>();
+    List<String> itemNames = new ArrayList<>();
+    List<Double> itemPrices = new ArrayList<>();
+    List<String> itemTypes = new ArrayList<>();
+    List<ProductClass> ourProductList = new ArrayList<>();
+    Map<String, ProductClass> itemList = new LinkedHashMap<>();
+    int counter = 0;
 
-    public void itemList()
+    public InventoryClass() {}
 
-    {
-        List<ProductClass> itemName = new ArrayList<>();
-        try (Scanner fileReader = new Scanner(new File("C:\\Users\\Student\\workspace\\nlr-8-module-1-capstone-orange-team-8\\vendingmachine.csv"))) {
+    public List<ProductClass> getOurProductList() {
+        return ourProductList;
+    }
+
+
+    public Map<String, ProductClass> makeItemList() {
+        try (Scanner fileReader = new Scanner(inputFile)) {
+
             while (fileReader.hasNextLine()) {
                 String currentLine = fileReader.nextLine();
-                String[] productList = currentLine.split("\\|");
-                String slot = productList[0];
-                String name = productList[1];
-                String price = productList[2];
-                String type = productList[3];
-                itemName.add(new ProductClass(slot, name, price, type));
+                String[] splitString = currentLine.split("\\|");
+                itemSlot.add(splitString[0]);
+                itemNames.add(splitString[1]);
+                itemPrices.add(Double.parseDouble(splitString[2]));
+                itemTypes.add(splitString[3]);
+
+
             }
 
         } catch (FileNotFoundException ex) {
             System.out.println("Item list not available");
         }
+        ourProductList = new ArrayList<>();
+        for (int i = 0; i < itemSlot.size(); i++) {
+            ProductClass product = new ProductClass(itemNames.get(i), itemPrices.get(i), itemTypes.get(i));
+            ourProductList.add(product);
+        }
+
+        Map<String, ProductClass> itemList = new LinkedHashMap<>();
+        for (int i = 0; i < itemSlot.size(); i++) {
+            itemList.put(itemSlot.get(i), ourProductList.get(i));
+
+        } return itemList;
     }
-}
+
+
+
+    }
+
+
 
 
 /*while (fileReader.hasNextLine()) {
@@ -38,4 +66,4 @@ public class InventoryClass {
         String name = productList[1];
         String price = productList[2];
         String type = productList[3];
-        itemName.add(new ProductClass(slot, name, price, type));
+        itemName.add(new ProductClass(slot, name, price, type)); */
