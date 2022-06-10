@@ -2,6 +2,7 @@ package com.techelevator;
 
 import com.techelevator.view.Menu;
 
+import java.io.File;
 import java.util.*;
 
 public class VendingMachineCLI {
@@ -22,6 +23,8 @@ public class VendingMachineCLI {
         InventoryClass vendingMachine = new InventoryClass();
         vendingMachine.makeItemList();
         Wallet wallet = new Wallet();
+        //Log is to be added below
+        Scanner log = Scanner(System.)
         while (true) {
             String choice = (String) menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
 
@@ -55,6 +58,7 @@ public class VendingMachineCLI {
                     } else {
                         if ((billChoice.equals("1"))) {
                             wallet.balance++;
+
                             System.out.println("Wallet Balance: " + wallet.balance);
                         } else if (billChoice.equals("2")) {
                             wallet.balance += 2.00;
@@ -119,19 +123,22 @@ public class VendingMachineCLI {
                         } else if (wallet.balance > wallet.dime) {
                             wallet.balance -= wallet.dime;
                             dimeCounter++;
-                        } else if (wallet.balance > wallet.nickle) {
+                        } else {
                             wallet.balance -= wallet.nickle;
                             nickleCounter++;
                         }
-                        System.out.println("Your change is:");
-                        System.out.println(quarterCounter + "quarter(s)");
-                        System.out.println(dimeCounter + "dimes(s)");
-                        System.out.println(nickleCounter + "nickle(s)");
+
 
                     }
-
+                    System.out.println("Your change is:");
+                    System.out.println(quarterCounter + " Quarter(s)");
+                    System.out.println(dimeCounter + " Dimes(s)");
+                    System.out.println(nickleCounter + " Nickle(s)");
+                    System.out.println("Thanks for purchasing from Umbrella Corp.!");
                 }
+
             }
+
         }
     }
 
