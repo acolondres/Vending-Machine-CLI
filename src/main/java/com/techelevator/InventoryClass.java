@@ -15,7 +15,8 @@ public class InventoryClass {
     Map<String, ProductClass> itemList = new LinkedHashMap<>();
     int counter = 0;
 
-    public InventoryClass() {}
+    public InventoryClass() {
+    }
 
     public List<ProductClass> getOurProductList() {
         return ourProductList;
@@ -45,15 +46,13 @@ public class InventoryClass {
             ourProductList.add(product);
         }
 
-       itemList = new LinkedHashMap<>();
+        itemList = new LinkedHashMap<>();
         for (int i = 0; i < itemSlot.size(); i++) {
             itemList.put(itemSlot.get(i), ourProductList.get(i));
 
-        } return itemList;
+        }
+        return itemList;
     }
 
 
-
-
-
-    }
+}

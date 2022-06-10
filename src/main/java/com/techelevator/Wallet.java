@@ -2,7 +2,6 @@ package com.techelevator;
 
 public class Wallet {
 
-
     Double balance = 0.00;
     Double quarter = 0.25;
     Double dime = 0.10;
@@ -46,4 +45,7 @@ public class Wallet {
     public Wallet() {
         System.out.println(getBalance());
     }
+
+
+
 }
