@@ -45,7 +45,7 @@ public class InventoryClass {
             ourProductList.add(product);
         }
 
-        Map<String, ProductClass> itemList = new LinkedHashMap<>();
+       itemList = new LinkedHashMap<>();
         for (int i = 0; i < itemSlot.size(); i++) {
             itemList.put(itemSlot.get(i), ourProductList.get(i));
 
@@ -54,16 +54,6 @@ public class InventoryClass {
 
 
 
+
+
     }
-
-
-
-
-/*while (fileReader.hasNextLine()) {
-        String currentLine = fileReader.nextLine();
-        String[] productList = currentLine.split("\|");
-        String slot = productList[0];
-        String name = productList[1];
-        String price = productList[2];
-        String type = productList[3];
-        itemName.add(new ProductClass(slot, name, price, type)); */
