@@ -2,10 +2,7 @@ package com.techelevator;
 
 import com.techelevator.view.Menu;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class VendingMachineCLI {
 
@@ -24,6 +21,7 @@ public class VendingMachineCLI {
     public void run() {
         InventoryClass vendingMachine = new InventoryClass();
         vendingMachine.makeItemList();
+        Wallet wallet = new Wallet();
         while (true) {
             String choice = (String) menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
 
@@ -31,16 +29,40 @@ public class VendingMachineCLI {
                 // display vending machine items
                 for (Map.Entry<String, ProductClass> product : vendingMachine.itemList.entrySet()) {
                     System.out.print("(" + product.getKey() + ") ");
-                    System.out.print(product.getValue().getName() + " ----> ");
+                    System.out.print(product.getValue().getName() + " --> ");
                     if (product.getValue().getItemAmount() == 0) {
                         System.out.println("SOLD OUT");
                     } else {
-                        System.out.print(product.getValue().getItemAmount() + " remaining ----> ");
+                        System.out.print(product.getValue().getItemAmount() + " remaining --> ");
                         System.out.println(product.getValue().getPrice());
 
                     }
                 }
             } else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
+                System.out.println("(1) Feed Money");
+                System.out.println("(2) Select Product");
+                System.out.println("(3) Finish Transaction");
+                System.out.print("(Select an option by entering 1, 2, or 3) --> ");
+                Scanner userInput = new Scanner(System.in);
+                String purchaseOption = userInput.nextLine();
+                if(purchaseOption.equals("1")) {
+                    System.out.println("Machine only accepts $1, $2, and $5");
+                    System.out.print("Insert money by typing number of bill amount --> ");
+                    String billChoice = userInput.nextLine();
+                    if (!(billChoice.equals("1")) && !(billChoice.equals("2")) && !(billChoice.equals("5"))) {
+                    System.out.println("Sorry. Machine only accepts $1, $2, and $5");
+                } else {
+                    if ((billChoice.equals("1"))) {
+                        wallet.balance++;
+                    }
+
+                    }
+                }
+
+
+
+
+
                 // do purchase
             }
 
