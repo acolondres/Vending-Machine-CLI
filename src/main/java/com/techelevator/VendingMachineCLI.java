@@ -25,6 +25,8 @@ public class VendingMachineCLI {
 
     public void run() {
         InventoryClass vendingMachine = new InventoryClass();
+        LogKeep logger = new LogKeep();
+        LogKeep moneyInLog = new LogKeep();
         vendingMachine.makeItemList();
         Wallet wallet = new Wallet();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern ("MM/dd/yyyy HH:mm:ss");
@@ -70,16 +72,17 @@ public class VendingMachineCLI {
                         } else {
                             if ((billChoice.equals("1"))) {
                                 wallet.balance++;
-                                logWriter.println(today + "Feed Money: "+"1.00 " + wallet.balance);
+                                logger.moneyInLog(billChoice, wallet.getBalance());
+
 
                                 System.out.println("Wallet Balance: " + wallet.balance);
                             } else if (billChoice.equals("2")) {
                                 wallet.balance += 2.00;
-                                logWriter.println(today + "Feed Money: "+"2.00 " + wallet.balance);
+                                logger.moneyInLog(billChoice, wallet.getBalance());
                                 System.out.println("Wallet Balance: " + wallet.balance);
                             } else if (billChoice.equals("5")) {
                                 wallet.balance += 5.00;
-                                logWriter.println(today + "Feed Money: "+"5.00 " + wallet.balance);
+                                logger.moneyInLog(billChoice, wallet.getBalance());
                                 System.out.println("Wallet Balance: " + wallet.balance);
                             }
                         }
@@ -100,6 +103,7 @@ public class VendingMachineCLI {
 
 
                         }
+
                         System.out.print("Please enter single item code: ");
                         String inputItemCode = userInput.nextLine();
                         if (!vendingMachine.itemList.containsKey(inputItemCode)) {
@@ -110,10 +114,12 @@ public class VendingMachineCLI {
                             if (vendingMachine.itemList.get(inputItemCode).getPrice() > wallet.balance) {
                                 System.out.println("Insufficient Funds");
                             } else {
+
                                 System.out.println("Item Purchased: " + vendingMachine.itemList.get(inputItemCode).getName() + " " + vendingMachine.itemList.get(inputItemCode).getPrice());
                                 wallet.balance -= vendingMachine.itemList.get(inputItemCode).getPrice();
                                 vendingMachine.itemList.get(inputItemCode).setItemAmount(vendingMachine.itemList.get(inputItemCode).getItemAmount() - 1);
                                 System.out.println("Balance Remaining: " + wallet.balance);
+                                logger.purchaseMadeLog(vendingMachine.itemList.get(inputItemCode).getName() , inputItemCode, vendingMachine.itemList.get(inputItemCode).getPrice(), wallet.getBalance());
                                 if (vendingMachine.itemList.get(inputItemCode).getType().equals("Chip")) {
                                     System.out.println("Crunch, Crunch, Crunch!");
                                 } else if (vendingMachine.itemList.get(inputItemCode).getType().equals("Candy")) {
@@ -128,6 +134,7 @@ public class VendingMachineCLI {
 
                         }
                     } else if (purchaseOption.equals("3")) {
+                        logger.giveChangeLog(wallet.getBalance(), 0.00);
                         int quarterCounter = 0;
                         int dimeCounter = 0;
                         int nickleCounter = 0;
@@ -142,6 +149,7 @@ public class VendingMachineCLI {
                                 wallet.balance -= wallet.nickle;
                                 nickleCounter++;
                             }
+
 
 
                         }
